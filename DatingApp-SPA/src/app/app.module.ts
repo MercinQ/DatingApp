@@ -26,6 +26,9 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { MemberDetailsComponent } from './members/member-details/member-details.component';
 import { MemberDetialResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -41,7 +44,8 @@ export function tokenGetter() {
       ListsComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailsComponent
+      MemberDetailsComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
@@ -68,7 +72,9 @@ export function tokenGetter() {
       AuthGuard,
       UserService,
       MemberDetialResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent
