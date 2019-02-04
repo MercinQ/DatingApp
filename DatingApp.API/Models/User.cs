@@ -31,5 +31,9 @@ namespace DatingApp.API.Models
 
         public ICollection<Photo> Photos { get; set; }
 
+        internal static object FindFirst(string nameIdentifier)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
