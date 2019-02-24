@@ -20,6 +20,7 @@ constructor(private http: HttpClient) { }
   }
 
   getUser(id: any): Observable<User> {
+    console.log(this.baseUrl + 'users/' + id);
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
 
